@@ -41,7 +41,6 @@
           plantuml-syntax
           project_nvim
           registers
-          scrollbar
           telescope
           toggleterm
           treesitter-context
@@ -66,7 +65,7 @@
         (system:
           let
             pkgs = nixpkgs.legacyPackages.${system}
-              // { ck3dNvimPkgs = { inherit (ck3d-configs.packages.${system}) outline-nvim; }; };
+              // { ck3dNvimPkgs = ck3d-configs.packages.${system}; };
 
             nvims = builtins.mapAttrs
               (name: languages: (lib.evalModules {
