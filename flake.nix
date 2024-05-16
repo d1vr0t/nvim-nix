@@ -104,6 +104,6 @@
                 ];
               };
           in
-          nvims // { default = nvims.nvim-admin; });
+          nvims // { default = nvims.nvim-dev; });
     };
 }
