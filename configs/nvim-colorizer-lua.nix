@@ -1,10 +1,8 @@
 { pkgs, ... }:
 {
-  configs.nvim-colorizer-lua = {
+  configs.colorizer = {
     after = [ "gruvbox" ];
     plugins = [ pkgs.vimPlugins.nvim-colorizer-lua ];
-    lua = [
-      "require 'colorizer'.setup()"
-    ];
+    setup = { };
   };
 }
