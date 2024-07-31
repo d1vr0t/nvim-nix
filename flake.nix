@@ -53,11 +53,6 @@
 
       nix2nvimrcConfigsOverwrite = readDirNix ./configs;
 
-      nvimConfigs = builtins.foldl' lib.attrsets.recursiveUpdate { } [
-        nix2nvimrcConfigs-ck3d
-        nix2nvimrcConfigsOverwrite
-      ];
-
     in
     {
 
