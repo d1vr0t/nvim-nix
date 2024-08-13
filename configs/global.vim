@@ -8,7 +8,6 @@ autocmd BufNewFile,BufRead *.jq set filetype=jq
 autocmd BufNewFile,BufRead *.dhall set filetype=dhall
 autocmd BufNewFile,BufRead .envrc set filetype=bash
 autocmd BufNewFile,BufRead flake.lock set filetype=json
-autocmd BufWritePost *.vue !pnpm --offline lint --fix %
 
 autocmd FileType markdown,gitcommit setlocal spell
 autocmd FileType markdown setlocal iskeyword+=-

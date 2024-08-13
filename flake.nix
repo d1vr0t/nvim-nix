@@ -13,43 +13,6 @@
       inherit (ck3d-configs.lib lib) readDirNix;
 
       forAllSystems = lib.genAttrs lib.systems.flakeExposed;
-      nix2nvimrcConfigs-ck3d = {
-        inherit (ck3d-configs.nix2nvimrcConfigs)
-          bufferline
-          cmp
-          Comment
-          diffview
-          gitsigns
-          gruvbox
-          ibl
-          leader
-          leap
-          lspconfig
-          lsp_extensions
-          lsp-status
-          lualine
-          luapad
-          neogit
-          neovide
-          null-ls
-          nvim-surround
-          nvim-tree
-          nvim-treesitter
-          nvim-web-devicons
-          osc52
-          outline
-          plantuml-syntax
-          project_nvim
-          registers
-          telescope
-          toggleterm
-          treesitter-context
-          trouble
-          vim-speeddating
-          vimtex
-          which-key
-          ;
-      };
 
       nix2nvimrcConfigsOverwrite = readDirNix ./configs;
 
@@ -67,7 +30,7 @@
                 modules =
                   (nix2nvimrc.lib.modules pkgs)
                   ++ (builtins.attrValues ck3d-configs.nix2nvimrcModules)
-                  ++ (builtins.attrValues nix2nvimrcConfigs-ck3d)
+                  ++ (builtins.attrValues ck3d-configs.nix2nvimrcConfigs)
                   ++ (builtins.attrValues nix2nvimrcConfigsOverwrite)
                   ++ [{
                     wrapper.name = name;
