@@ -86,6 +86,9 @@ in
       [ "n" "<Leader>sd" "<Cmd>setlocal spell spelllang=de_de<CR>" { desc = "Spell German"; } ]
       # rename global
       [ "n" "<F2>" ":%s#\\<<C-r><C-w>\\>#<C-r><C-w>#g<Left><Left>" { desc = "Spell German"; silent = false; } ]
+      [ [ "n" "v" ] "<Leader>fs" "<Cmd>Telescope grep_string<CR>" { } ]
+      [ "n" "<Leader><Leader><Tab>" (luaExpr "require'telescope.builtin'.resume") { desc = "Resume telescope"; } ]
+      [ "n" "<Leader><Tab>" (luaExpr "function() require'telescope.builtin'.buffers({sort_mru=true, sort_lastused=true}) end") { desc = "Find buffers (sorted)"; } ]
     ];
     vim = [ ./global.vim ];
   };
