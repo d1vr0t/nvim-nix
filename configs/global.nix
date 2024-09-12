@@ -25,6 +25,7 @@ in
       smarttab = true;
       expandtab = true;
       shiftwidth = 2;
+      relativenumber = false;
       copyindent = true;
       preserveindent = true;
       number = true;
