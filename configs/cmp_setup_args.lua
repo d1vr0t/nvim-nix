@@ -7,6 +7,7 @@ return {
       documentation = require 'cmp'.config.window.bordered(),
     },
   sources = require 'cmp'.config.sources({
+      { name = "yank" },
       { name = "treesitter" },
       { name = "nvim_lsp" },
       { name = "vsnip" },

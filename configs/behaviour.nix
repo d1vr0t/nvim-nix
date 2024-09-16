@@ -1,19 +1,12 @@
 {
-  lib,
-  config,
   pkgs,
-  builtins,
+  lib,
   ...
 }:
 {
-  configs.treesitter-context.setup.args.enable = false;
-  configs.lspconfig.lspconfig.servers.nixd.config = {
-    cmd = [ "${pkgs.nixd}/bin/nixd" ];
-    settings.nixd = {
-
-         nixpkgs = {
-            expr = "import <nixpkgs> { }";
-         };
-    };
-  };
+  configs.treesitter-context.setup.args = {
+  max_lines = lib.mkForce 4;
+  separator = "═";
+  line_numbers = true;
+};
 }
